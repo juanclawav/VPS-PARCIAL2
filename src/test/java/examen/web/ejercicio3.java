@@ -2,7 +2,6 @@ package examen.web;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebElement;
 
 public class ejercicio3 extends testBaseTodoist{
 
@@ -13,7 +12,7 @@ public class ejercicio3 extends testBaseTodoist{
         registerPage.emailTextBox.setText("jcctapi@abcde.com");
         registerPage.pwTextBox.setText("pass123");
         registerPage.registerBtn.click();
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         registerPage.accountNameTb.setText("Juan Claudio Test");
         registerPage.submitNameBtn.click();
         Thread.sleep(5000);
@@ -26,7 +25,7 @@ public class ejercicio3 extends testBaseTodoist{
         addProjectPopup.projectNameTb.setText("TEST WEB P2");
         addProjectPopup.submitBtn.click();
         Thread.sleep(5000);
-        Assertions.assertTrue(workspace.listItem("TEST WEB P2").isControlDisplayed());
+        Assertions.assertEquals(workspace.checkNewProject("TEST WEB P2").getTextValue(), "TEST WEB P2");
         Thread.sleep(5000);
 
     }
