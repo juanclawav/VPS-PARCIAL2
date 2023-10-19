@@ -8,7 +8,7 @@ public class ejercicio4 extends testBaseTodoly {
     @Test
     public void VerifyP4() throws InterruptedException{
         mainPage.loginButton.click();
-        loginSection.emailTextBox.setText("vanetejerina314@gmail.com");
+        loginSection.emailTextBox.setText("jcctapi@jcctapi.com");
         loginSection.pwdTextBox.setText("12345");
         loginSection.loginButton.click();
 
@@ -20,7 +20,7 @@ public class ejercicio4 extends testBaseTodoly {
 
 
         settingsPage.oldPwdTxtBox.setText("12345");
-        settingsPage.newPwdTxtBox.setText("123456");
+        settingsPage.newPwdTxtBox.setText("pass1234567");
 
         settingsPage.saveButton.click();
 
@@ -32,7 +32,7 @@ public class ejercicio4 extends testBaseTodoly {
 
         mainPage.loginButton.click();
         loginSection.emailTextBox.setText("jcctapi@jcctapi.com");
-        loginSection.pwdTextBox.setText("123456");
+        loginSection.pwdTextBox.setText("pass1234567");
         loginSection.loginButton.click();
 
         Thread.sleep(5000);

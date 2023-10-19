@@ -32,8 +32,8 @@ public class ejercicio1 {
         body.clear();
         body.put("Email", Configuration.user);
         body.put("Password", Configuration.password);
-        body.put("FullName", Configuration.user);
-        requestInfo.setHost(Configuration.host+"api/user.json").setBody(body.toString());
+        body.put("FullName", Configuration.name);
+        requestInfo.setHost(Configuration.host+"/api/user.json").setBody(body.toString());
         response = FactoryRequest.make("post").send(requestInfo);
         response.then()
                 .log().all()
@@ -44,7 +44,7 @@ public class ejercicio1 {
         //Verify Token
 
         body.clear();
-        requestInfo.setHost(Configuration.host+"api/authentication/token.json").setHeaders("Authorization","Basic "+auth);
+        requestInfo.setHost(Configuration.host+"/api/authentication/token.json").setHeaders("Authorization","Basic "+auth);
         response = FactoryRequest.make("get").send(requestInfo);
         response.then()
                 .log().all()
@@ -57,7 +57,7 @@ public class ejercicio1 {
         //Verify Create Project
         body.put("Content", "Project1");
         body.put("Icon", 4);
-        requestInfo.removeHeader("Authorization").setHost(Configuration.host+"api/projects.json").setBody(body.toString()).setHeaders("Token",token);
+        requestInfo.removeHeader("Authorization").setHost(Configuration.host+"/api/projects.json").setBody(body.toString()).setHeaders("Token",token);
         response = FactoryRequest.make("post").send(requestInfo);
         response.then()
                 .log().all()
@@ -67,7 +67,7 @@ public class ejercicio1 {
 
 
         //Verify Delete Token
-        requestInfo.setHost(Configuration.host+"api/authentication/token.json").setHeaders("Token",token);
+        requestInfo.setHost(Configuration.host+"/api/authentication/token.json").setHeaders("Token",token);
         response = FactoryRequest.make("delete").send(requestInfo);
         response.then()
                 .log().all()
@@ -79,7 +79,7 @@ public class ejercicio1 {
         body.clear();
         body.put("Content", "Project2");
         body.put("Icon", 5);
-        requestInfo.setHost(Configuration.host+"api/projects.json").setBody(body.toString()).setHeaders("Token",token);
+        requestInfo.setHost(Configuration.host+"/api/projects.json").setBody(body.toString()).setHeaders("Token",token);
         response = FactoryRequest.make("post").send(requestInfo);
         response.then()
                 .log().all()

@@ -9,15 +9,16 @@ public class ejercicio3 extends testBaseTodoist{
     public void testCreateUserCreateProject() throws InterruptedException{
         mainTodoistPage.registerBtn.click();
         Thread.sleep(5000);
-        registerPage.emailTextBox.setText("jcctapi@abcde.com");
-        registerPage.pwTextBox.setText("pass123");
+        registerPage.emailTextBox.setText("jcctapi5@abcde.com");
+        registerPage.pwTextBox.setText("pass123456");
         registerPage.registerBtn.click();
-        Thread.sleep(8000);
+        Thread.sleep(10000);
         registerPage.accountNameTb.setText("Juan Claudio Test");
         registerPage.submitNameBtn.click();
         Thread.sleep(5000);
         registerPage.markPersonalBtn.click();
         registerPage.launchBtn.click();
+        Thread.sleep(15000);
         Assertions.assertTrue(workspace.profileButton.isControlDisplayed(),"ERRRROR NO SE CREO EL USUARIO");
         Thread.sleep(5000);
         workspace.addProjectBtn.click();
